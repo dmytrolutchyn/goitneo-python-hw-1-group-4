@@ -5,14 +5,14 @@ def parse_input(user_input):
 
 def add_contact(args, contacts):
     if len(args) != 2:
-        return "Invalid number of arguments!"
+        return f"ValueError: not enough values to unpack (expected 2, got {len(args)})"
     name, phone = args
     contacts[name] = phone
     return "Contact added."
 
 def change_contact(args, contacts):
     if len(args) != 2:
-        return "Invalid number of arguments!"
+        return f"ValueError: not enough values to unpack (expected 2, got {len(args)})"
     name, phone = args
     if name in contacts:
         contacts[name] = phone
@@ -22,7 +22,7 @@ def change_contact(args, contacts):
     
 def show_phone(args, contacts):
     if len(args) != 1:
-        return "Invalid number of arguments!"
+        return f"ValueError: not enough values to unpack (expected 1, got {len(args)})"
     name, = args
     if name in contacts:
         return contacts[name]
